@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn, Unique } from 'typeorm';
 import { DateTimeEntity } from '../base/dateTimeEntity';
 
-@Entity('user_auth', { orderBy: {  id: 'ASC' } })
+@Entity('user_auth', { orderBy: { id: 'ASC' } })
 export class User extends DateTimeEntity {
   @PrimaryGeneratedColumn({ type: 'bigint' })
   id: number;
@@ -15,6 +15,9 @@ export class User extends DateTimeEntity {
 
   @Column()
   password: string;
+
+  @Column()
+  role: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   lastLogin: string;
