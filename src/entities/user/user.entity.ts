@@ -16,9 +16,6 @@ export class User extends DateTimeEntity {
   @Column()
   password: string;
 
-  @Column()
-  role: string;
-
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   lastLogin: string;
 
